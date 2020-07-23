@@ -26,7 +26,7 @@ def index():
                         return redirect("#")
                   note = request.form['note-text']
 
-                  db.execute("INSERT INTO notes (user_id, note) VALUES(?, ?)", session['user_id'], note)ّ
+                  db.execute("INSERT INTO notes (user_id, note) VALUES(?, ?)", session['user_id'], note)
                   return redirect("/")
            if request.form['type'] == 'delete-note':
                   db.execute("DELETE FROM notes where note = ?", request.form['note-data'])
