@@ -1,0 +1,15 @@
+{% for row in rows %}
+    <form action="#" method="post">
+    <input type="hidden" name="type" value="delete-note">
+    <input type="hidden" name="note-data" value="{{row[note]}}">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Note {{++i}}</h5>
+     <p class="card-text">{{row['note']}}</p>
+    <button class="btn btn-primary" type='submit'>Delete Note</a>
+    </div>
+    </div>
+
+</form>
+</div>
+{% endfor %}

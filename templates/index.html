@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="#" method="post">
+<input type="hidden" name="type" value="add-note">
+<div class="container my-3">
+    <h1> Notes App </h1>
+    <div class="card border-info mb-3">
+        <div class="card-body text-info">
+        <h5 class="card-title">Add note</h5>
+        <div class="form-group">
+            <textarea class="form-control" name='note-text' rows='3'></textarea>
+        </div>
+      <button  class="btn btn-primary" type="submit">ADD</a>
+    </div>
+  </div>
+</div>
+</form>
+<hr>
+<h1>Your Notes</h1>
+<hr>
+
+<div class="row container-fluid">
+
+
+
+        {% for row in rows %}
+          <form action="#" method='post'>
+            <input type="hidden" name="type" value="delete-note">
+            <input type="hidden" name="note-data" value="{{row['note']}}">
+            <div class="card text-white bg-info mb-3" style="width: 18rem;">
+
+                <div class="card-body">
+                  <h5 class="card-title">Note {{row['num']}}</h5>
+                  <p class="card-text text-dark">{{row['note']}}</p>
+                  <button type = 'submit'  class="btn btn-primary">Delete</button>
+                  <a class="nav-link disabled text-right " style="font-size:medium;" href="#" tabindex="-1" aria-disabled="true">{{row['date']}}</a>
+                </div>
+              </div>
+              </form>
+
+        {% endfor %}
+
+</div>
+
+</div>
+
+
+
+{% endblock %}
