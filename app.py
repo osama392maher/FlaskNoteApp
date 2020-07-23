@@ -9,7 +9,7 @@ from cs50 import SQL
 
 app = Flask(__name__)
 
-app.secret_key = generate_password_hash("run&go")
+app.secret_key = "123"
 app.config['SESSION_TYPE'] = 'filesystem'
 
 
@@ -26,7 +26,7 @@ def index():
                         return redirect("#")
                   note = request.form['note-text']
 
-                  db.execute("INSERT INTO notes (user_id, note) VALUES(?, ?)", session['user_id'], note)
+                  db.execute("INSERT INTO notes (user_id, note) VALUES(?, ?)", session['user_id'], note)ّ
                   return redirect("/")
            if request.form['type'] == 'delete-note':
                   db.execute("DELETE FROM notes where note = ?", request.form['note-data'])
