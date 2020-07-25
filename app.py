@@ -14,7 +14,7 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 
 
-db = SQL("sqlite:///notes.db")
+db = SQL("sqlite:///data/notes.db")
 
 @app.route('/', methods=["GET", "POST"])
 def index():
