@@ -7,7 +7,7 @@ colorama==0.4.3
 cs50==5.0.4
 distlib==0.3.0
 filelock==3.0.12
-Flask==1.1.2
+Flask==2.3.2
 Flask-Session==0.3.2
 Flask-SQLAlchemy==2.4.3
 gunicorn==20.0.4
